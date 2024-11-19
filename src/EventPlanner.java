@@ -30,22 +30,21 @@ public class EventPlanner {
 
     public static void addDefaultEvents(ArrayList<Event> events) {
 
-        // Create Deadline event using EventFactory
+        // Creating Deadline event using EventFactory
         Deadline defaultDeadline = (Deadline) EventFactory.createEvent(
 
-                "Deadline",
+                EventType.DEADLINE,
                 "Default Deadline",
                 LocalDateTime.now().plusDays(3),
                 null,
                 null
 
         );
-        events.add(defaultDeadline);
 
-        // Create Meeting event using EventFactory
+        // Creating Meeting event using EventFactory
         Meeting defaultMeeting = (Meeting) EventFactory.createEvent(
 
-                "Meeting",
+                EventType.MEETING,
                 "Default Meeting",
                 LocalDateTime.now().plusDays(3),
                 LocalDateTime.now().plusDays(3).plusHours(1),

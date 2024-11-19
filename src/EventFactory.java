@@ -3,14 +3,14 @@ import java.time.LocalDateTime;
 
 public class EventFactory {
 
-    public static Event createEvent(String type, String name, LocalDateTime start, LocalDateTime end, String location) {
+    public static Event createEvent(EventType type, String name, LocalDateTime start, LocalDateTime end, String location) {
 
         switch (type) {
 
-            case "Deadline":
+            case DEADLINE:
                 return new Deadline(name, start);
 
-            case "Meeting":
+            case MEETING:
                 return new Meeting(name, start, end, location);
 
             default:
